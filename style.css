@@ -28,43 +28,11 @@ html { scroll-behavior: smooth; }
 header {
   text-align: center;
   background-color: rgba(40, 0, 80, 0.8);
-  padding: 3rem 1rem 2rem;
+  padding: 1rem 1rem 1rem;
   position: sticky;
   top: 0;
   z-index: 100;
-  border-bottom: 3px solid #003399;
 }
-
-.corner-logo {
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  width: 300px;
-  height: auto;
-  border-radius: 15px;
-}
-
-.right-corner {
-  position: absolute;
-  top: 20px;
-  right: 10px;
-  width: 275px;
-  height: auto;
-  border-radius: 15px;
-}
-
-
-
-.site-title {
-  font-family: 'ReignBeats', sans-serif;
-  font-size: 5rem;
-  letter-spacing: 3px;
-  margin: 0;
-  color: #f4e4ff;
-  text-shadow: 3px 3px 10px #000;
-}
-
-.site-nav { margin-top: 1rem; }
 
 .site-nav a {
   color: #c9b6ff;

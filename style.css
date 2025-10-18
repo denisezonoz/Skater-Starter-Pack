@@ -3,21 +3,28 @@
   src: url('fonts/ReignBeats.otf') format('opentype');
 }
 
+/* ========== Base ========== */
 body {
   margin: 0;
   font-family: Arial, sans-serif;
   color: #fff;
-  /*background: url('graffiti.jpg') center center fixed;*/
+  /* Uncomment to use your graffiti BG */
+  /* background: url('graffiti.jpg') center center fixed; */
   background-size: cover;
   overflow-x: hidden;
 }
 
-/* Header */
+/* Smooth scroll */
+html { scroll-behavior: smooth; }
+
+/* ========== Header (sticky) ========== */
 header {
   text-align: center;
   background-color: rgba(40, 0, 80, 0.8);
   padding: 3rem 1rem 2rem;
-  position: relative;
+  position: sticky; /* sticky only once */
+  top: 0;
+  z-index: 100;
   border-bottom: 3px solid #003399;
 }
 
@@ -39,9 +46,7 @@ header {
   text-shadow: 3px 3px 10px #000;
 }
 
-.site-nav {
-  margin-top: 1rem;
-}
+.site-nav { margin-top: 1rem; }
 
 .site-nav a {
   color: #c9b6ff;
@@ -61,22 +66,28 @@ header {
   border-bottom: 2px solid #ffb6ff;
 }
 
-/* Main content */
-main {
+/* ========== Panels (main + sections) ========== */
+main, section {
   text-align: center;
   padding: 3rem 2rem;
   background: rgba(0, 0, 0, 0.5);
   margin: 2rem auto;
   border-radius: 20px;
   max-width: 1000px;
-  animation: fadeIn 0.8s ease-in-out;
+  min-height: 100vh;            /* full-screen feel */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  /* single animation name to avoid conflicts */
+  animation: fadeInPanel 0.8s ease-in-out;
 }
 
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
+/* prevent sticky header from covering titles */
+main, section { scroll-margin-top: 120px; }
 
+/* Headings/paragraphs */
 h2 {
   font-family: 'ReignBeats', sans-serif;
   font-size: 3rem;
@@ -91,7 +102,7 @@ p {
   margin: 1rem auto;
 }
 
-/* Buttons */
+/* ========== Buttons ========== */
 button {
   background: linear-gradient(135deg, #6200ea, #003399);
   color: white;
@@ -109,7 +120,7 @@ button:hover {
   box-shadow: 0 0 20px #b388ff;
 }
 
-/* Footer */
+/* ========== Footer (uncomment if you want it visible) ========== */
 /*
 footer {
   background-color: rgba(34, 34, 34, 0.9);
@@ -120,58 +131,32 @@ footer {
   border-top: 2px solid #003399;
 }
 */
-/* Fade transitions */
-body.fade-in { opacity: 0; animation: fadeIn 0.8s forwards; }
-body.fade-out { opacity: 1; animation: fadeOut 0.5s forwards; }
-@keyframes fadeOut { to { opacity: 0; } }
 
-
-/* smooth scroll */
-html {
-  scroll-behavior: smooth;
+/* ========== Animations (single definitions) ========== */
+@keyframes fadeInPanel {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
-/* make header stick to top */
-header {
-  position: sticky;
-  top: 0;
-  z-index: 100;
+body.fade-in { opacity: 0; animation: fadeInBody 0.8s forwards; }
+body.fade-out { opacity: 1; animation: fadeOutBody 0.5s forwards; }
+
+@keyframes fadeInBody { to { opacity: 1; } }
+@keyframes fadeOutBody { to { opacity: 0; } }
+
+/* ========== Optional: subtle tint per section ========== */
+#beginner { background-color: rgba(147, 112, 219, 0.3); }
+#boards   { background-color: rgba(123, 104, 238, 0.3); }
+#gear     { background-color: rgba(75, 0, 130, 0.3); }
+#repair   { background-color: rgba(106, 90, 205, 0.3); }
+#injury   { background-color: rgba(72, 61, 139, 0.3); }
+
+/* ========== Responsive tweaks ========== */
+@media (max-width: 900px) {
+  .corner-logo { width: 180px; left: 12px; top: 12px; }
+  .site-title  { font-size: 3.2rem; letter-spacing: 2px; }
+  main, section { margin: 1rem; border-radius: 16px; }
 }
 
-/* sections fill the screen */
-section {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: 3rem 2rem;
-  background: rgba(0,0,0,0.5);
-  margin: 2rem auto;
-  border-radius: 20px;
-  max-width: 1000px;
-}
-
-/* Prevent sticky header overlap */
-section {
-  scroll-margin-top: 120px;
-}
-
-/* optional: fade in each section */
-section {
-  animation: fadeIn 0.6s ease-in;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(30px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-/* highlight active link */
-.site-nav a.active {
-  color: #ffb6ff;
-  border-bottom: 2px solid #ffb6ff;
-}
 
 

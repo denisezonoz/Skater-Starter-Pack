@@ -244,3 +244,70 @@ body.fade-out { opacity: 1; animation: fadeOutBody 0.5s forwards; }
 
 
 
+
+
+/* ===== TYPES OF BOARDS SECTION ===== */
+#boards {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(6px);
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(100, 0, 200, 0.4);
+  padding: 3rem 2rem;
+}
+
+#boards h2 {
+  font-family: 'ReignBeats', sans-serif;
+  font-size: 3rem;
+  color: #e6d6ff;
+  text-shadow: 0 0 10px #8a2be2;
+  margin-bottom: 2rem;
+}
+
+#boards p {
+  color: #f8f6ff;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  max-width: 900px;
+  margin: 0 auto 2rem;
+}
+
+/* Grid layout for board types */
+.board-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* Each card */
+.board-card {
+  background: rgba(20, 0, 40, 0.6);
+  border-radius: 15px;
+  padding: 1.5rem;
+  box-shadow: 0 0 15px rgba(75, 0, 130, 0.5);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.board-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 20px #b388ff;
+}
+
+.board-card h3 {
+  font-family: 'ReignBeats', sans-serif;
+  color: #c9b6ff;
+  font-size: 1.6rem;
+  margin-bottom: 0.8rem;
+}
+
+.board-card p {
+  font-size: 1rem;
+  color: #eee;
+  line-height: 1.6;
+}
+
+
+
+

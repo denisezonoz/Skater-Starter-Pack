@@ -40,8 +40,8 @@ header {
 .right-corner {
   position: absolute;
   top: 20px;
-  right: 20px;
-  width: 300px;
+  right: 10px;
+  width: 275px;
   height: auto;
   border-radius: 15px;
 }

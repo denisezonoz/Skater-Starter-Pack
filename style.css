@@ -165,7 +165,7 @@ body.fade-out { opacity: 1; animation: fadeOutBody 0.5s forwards; }
 /* ========== Responsive tweaks ========== */
 @media (max-width: 900px) {
   .corner-logo { width: 180px; left: 12px; top: 12px; }
-  .right-corner { width: 180px; right: 12px; top: 12px; }
+  .right-corner { width: 180px; right: 14px; top: 14px; }
   .site-title  { font-size: 3.2rem; letter-spacing: 2px; }
   main, section { margin: 1rem; border-radius: 16px; }
 }

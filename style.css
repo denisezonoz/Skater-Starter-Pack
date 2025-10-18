@@ -9,7 +9,7 @@ body {
   font-family: Arial, sans-serif;
   color: #fff;
   /* Uncomment to use your graffiti BG */
-  /* background: url('graffiti.jpg') center center fixed; */
+  background: linear-gradient(180deg, #28017D 0%, #6320A3 40.38%, #CE50BE 79.81%, #E47EBF 89.42%, #FFDADB 100%);
   background-size: cover;
   overflow-x: hidden;
 }

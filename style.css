@@ -18,6 +18,7 @@ body {
   width: 100svw;
   height: 100svh;
   background: linear-gradient(180deg, #28017D 0%, #6320A3 40.38%, #CE50BE 79.81%, #E47EBF 89.42%, #FFDADB 100%);
+  z-index: 0;
 }
 
 /* Smooth scroll */

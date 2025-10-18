@@ -7,7 +7,7 @@ body {
   margin: 0;
   font-family: Arial, sans-serif;
   color: #fff;
-  background: url('graffiti.jpg') center center fixed;
+  /*background: url('graffiti.jpg') center center fixed;*/
   background-size: cover;
   overflow-x: hidden;
 }

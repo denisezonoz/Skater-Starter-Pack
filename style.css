@@ -110,6 +110,7 @@ button:hover {
 }
 
 /* Footer */
+/*
 footer {
   background-color: rgba(34, 34, 34, 0.9);
   color: #ccc;
@@ -118,7 +119,7 @@ footer {
   margin-top: 4rem;
   border-top: 2px solid #003399;
 }
-
+*/
 /* Fade transitions */
 body.fade-in { opacity: 0; animation: fadeIn 0.8s forwards; }
 body.fade-out { opacity: 1; animation: fadeOut 0.5s forwards; }

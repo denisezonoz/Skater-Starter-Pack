@@ -90,6 +90,7 @@ main, section {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background: linear-gradient(180deg, #28017D 0%, #6320A3 40.38%, #CE50BE 79.81%, #E47EBF 89.42%, #FFDADB 100%);
 
   /* single animation name to avoid conflicts */
   animation: fadeInPanel 0.8s ease-in-out;

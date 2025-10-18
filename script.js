@@ -11,14 +11,19 @@ window.addEventListener('beforeunload', () => {
   document.body.classList.add('fade-out');
 });
 
-// Highlight active nav link while scrolling
+
+function scrollToSection(id) {
+  document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+}
+
+// Highlight nav links while scrolling
 window.addEventListener('scroll', () => {
-  const sections = document.querySelectorAll('main[id], section[id]');
+  const sections = document.querySelectorAll('section');
   const links = document.querySelectorAll('.site-nav a');
   let current = '';
 
   sections.forEach(sec => {
-    const top = sec.offsetTop - 140; // header offset
+    const top = sec.offsetTop - 150;
     if (window.scrollY >= top) current = sec.id;
   });
 

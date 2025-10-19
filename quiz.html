@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <!-- Link to your CSS file -->
-  <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css">
     <title>Skateboard Selector Quiz</title>
     <style>
         body { font-family: Arial, sans-serif; line-height: 1.6; margin: 0; padding: 20px; background-color: #f4f4f4; }
@@ -17,13 +16,11 @@
         button { padding: 10px 15px; background-color: #007bff; color: white; border: none; border-radius: 5px; cursor: pointer; }
         button:hover { background-color: #0056b3; }
     </style>
-    
 </head>
 <body>
 
     <div class="quiz-container">
-        <!--<h2 style=" text-align: center;">Which Skateboard is Right for You?</h2> -->
-        <h2 style="font-family: 'ReignBeats', sans-serif;">Which Skateboard is Right for You?</h2>
+        <h1>Which Skateboard is Right for You?</h1>
         <form id="skateboard-quiz">
             <div class="question">
                 <h3>1. What is your primary goal for riding a skateboard?</h3>
@@ -38,7 +35,7 @@
                 <h3>2. What kind of terrain do you expect to ride on most often?</h3>
                 <label><input type="radio" name="q2" value="Shortboard"> Smooth, paved surfaces like skateparks and streets.</label>
                 <label><input type="radio" name="q2" value="Freestyle"> Flat, smooth ground for footwork.</label>
-                <label><input type="radio" name="q2" value="Longboard"> Roads, paths, and sidewalks, including some rougher surfaces.</label>
+                <input type="radio" name="q2" value="Longboard"> Roads, paths, and sidewalks, including some rougher surfaces.</label>
                 <label><input type="radio" name="q2" value="Surfskate"> Smooth pavement, bowls, and pump tracks.</label>
                 <label><input type="radio" name="q2" value="Minicruiser"> City streets and campus paths for short rides.</label>
             </div>
@@ -69,27 +66,14 @@
                 <label><input type="radio" name="q5" value="Surfskate"> Important enough to get a board that is still relatively compact.</label>
                 <label><input type="radio" name="q5" value="Minicruiser"> Very important. I need to be able to carry it easily.</label>
             </div>
-           <!-- <button type="submit">See My Skateboard</button> -->
+
+            <button type="submit">See My Skateboard</button>
         </form>
-
-        
-
-<!--
-        
-        <div class="back-button-container">
-          <button onclick="window.location.href='index.html'">Back to Homepage</button>
-        </div>
--->
-        <div class="button-row">
-          <button type="submit">See My Skateboard</button>
-          <button type="button" onclick="window.location.href='index.html'">Back to Homepage</button>
-        </div>
 
         <div id="result" class="result-container">
             <h2>Your Best Match: <span id="board-type"></span></h2>
             <p id="board-description"></p>
         </div>
-
     </div>
 
     <script src="script.js"></script>

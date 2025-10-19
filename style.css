@@ -3,6 +3,19 @@
   src: url('fonts/ReignBeats.otf') format('opentype');
 }
 
+
+.hidden {
+    display: none;
+}
+
+#submit-quiz, #restart-quiz {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
 .quiz-button-container {
   text-align: center;
   margin-top: 20px;

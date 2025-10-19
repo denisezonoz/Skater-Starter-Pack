@@ -49,80 +49,71 @@ window.addEventListener('scroll', () => {
 
 
 
-document.addEventListener('DOMContentLoaded', () => {
-    const submitButton = document.getElementById('submit-quiz');
-    const restartButton = document.getElementById('restart-quiz');
-    const quizContent = document.getElementById('quiz-content');
-    const resultsContainer = document.getElementById('results-container');
-    const resultTitle = document.getElementById('result-title');
-    const resultDescription = document.getElementById('result-description');
+document.getElementById('skateboard-quiz').addEventListener('submit', function(event) {
+    event.preventDefault();
 
     const results = {
-        shortboard: {
-            title: "You should get a Shortboard!",
-            description: "A shortboard is the perfect choice for someone who wants to learn technical street tricks like ollies, kickflips, and grinds. Its small size and maneuverability make it ideal for skateparks and street skating."
+        Shortboard: 0,
+        Freestyle: 0,
+        Longboard: 0,
+        Surfskate: 0,
+        Minicruiser: 0
+    };
+
+    const form = event.target;
+    const questions = form.querySelectorAll('.question');
+    questions.forEach(question => {
+        const selectedOption = question.querySelector('input[type="radio"]:checked');
+        if (selectedOption) {
+            results[selectedOption.value]++;
+        }
+    });
+
+    let bestMatch = 'Shortboard';
+    let maxScore = 0;
+    for (const board in results) {
+        if (results[board] > maxScore) {
+            maxScore = results[board];
+            bestMatch = board;
+        }
+    }
+
+    displayResult(bestMatch);
+});
+
+function displayResult(board) {
+    const boardTypes = {
+        Shortboard: {
+            name: 'Shortboard',
+            description: 'You are best suited for a **Shortboard**. This is the most common skateboard shape, ideal for tricks like ollies, kickflips, and grinds at skateparks and on the street. It features a symmetrical deck with a kicktail and kick nose for maximum pop and maneuverability.',
         },
-        freestyle: {
-            title: "You should get a Freestyle Skateboard!",
-            description: "A freestyle board is built for stylized flatground tricks and intricate footwork. If you prefer smooth, open areas to express your style, a symmetrical freestyle deck will offer the balance you need."
+        Freestyle: {
+            name: 'Freestyle / Old School',
+            description: 'You are best suited for a **Freestyle / Old School** board. This style is perfect for those interested in creative, technical flatland tricks and footwork. These decks often have a kicktail, are lighter, and may be directional for specific types of spins and movements.',
         },
-        longboard: {
-            title: "You should get a Longboard!",
-            description: "For long, comfortable cruises and smooth rides, a longboard is the way to go. Its stability and size are great for beginners and for covering long distances with ease."
+        Longboard: {
+            name: 'Longboard',
+            description: 'You are best suited for a **Longboard**. Longboards are designed for a smooth, stable, and comfortable ride, making them great for cruising, commuting, and downhill speed. They are significantly longer than other boards and offer a more cushioned ride on various surfaces.',
         },
-        surfskate: {
-            title: "You should get a Surfskate!",
-            description: "If you want to simulate the feeling of surfing on the street, a surfskate is your board. Its unique trucks allow for deep, pumping carves and turns, making it great for practicing your surf moves on concrete."
+        Surfskate: {
+            name: 'Surfskate',
+            description: 'You are best suited for a **Surfskate**. This board is designed to mimic the feeling of surfing on land. It features a special front truck that allows for tight, fluid turns and lets you "pump" for speed without pushing, making it great for practicing surf maneuvers.',
         },
-        minicruiser: {
-            title: "You should get a Mini-Cruiser!",
-            description: "A mini-cruiser is the ultimate board for portability and casual rides. It's small, lightweight, and perfect for quick trips to the store or cruising down the sidewalk."
+        Minicruiser: {
+            name: 'Minicruiser',
+            description: 'You are best suited for a **Minicruiser**. Small and highly portable, this board is ideal for short-distance commuting, cruising campus, or casual rides around town. Its compact size makes it easy to carry in a backpack or locker.',
         }
     };
 
-    submitButton.addEventListener('click', () => {
-        const answers = {};
-        const radioButtons = document.querySelectorAll('input[type="radio"]:checked');
+    const resultEl = document.getElementById('result');
+    const boardTypeEl = document.getElementById('board-type');
+    const boardDescEl = document.getElementById('board-description');
 
-        if (radioButtons.length < 5) {
-            alert('Please answer all the questions before submitting.');
-            return;
-        }
+    const resultData = boardTypes[board];
+    boardTypeEl.textContent = resultData.name;
+    boardDescEl.innerHTML = resultData.description;
+    resultEl.style.display = 'block';
+}
 
-        radioButtons.forEach(radio => {
-            const value = radio.value;
-            answers[value] = (answers[value] || 0) + 1;
-        });
-
-        // Find the result with the highest number of votes
-        let finalResult = 'shortboard'; // Default to shortboard if there's a tie
-        let highestScore = 0;
-        for (const boardType in answers) {
-            if (answers[boardType] > highestScore) {
-                highestScore = answers[boardType];
-                finalResult = boardType;
-            }
-        }
-
-        // Display the result
-        resultTitle.textContent = results[finalResult].title;
-        resultDescription.textContent = results[finalResult].description;
-
-        quizContent.classList.add('hidden');
-        submitButton.classList.add('hidden');
-        resultsContainer.classList.remove('hidden');
-    });
-
-    restartButton.addEventListener('click', () => {
-        // Reset all radio buttons
-        const radioButtons = document.querySelectorAll('input[type="radio"]');
-        radioButtons.forEach(radio => {
-            radio.checked = false;
-        });
-
-        // Hide results and show the quiz again
-        resultsContainer.classList.add('hidden');
-        quizContent.classList.remove('hidden');
-        submitButton.classList.remove('hidden');
     });
 });

@@ -435,11 +435,17 @@
     ctx.rotate(skateboard.rotation);
 
     // Board
-    ctx.fillStyle = '#FF6B35';
+    // 🎀 Pink, thinner skateboard
+    ctx.fillStyle = '#ff66cc'; // bright pink board
+    skateboard.height = 10;    // thinner board
+    skateboard.width = 60;     // slightly slimmer overall
     ctx.fillRect(-skateboard.width / 2, -skateboard.height / 2, skateboard.width, skateboard.height);
-    ctx.strokeStyle = '#333';
-    ctx.lineWidth = 2;
-    ctx.strokeRect(-skateboard.width / 2, -skateboard.height / 2, skateboard.width, skateboard.height);
+
+// outline
+ctx.strokeStyle = '#222';
+ctx.lineWidth = 1.5;
+ctx.strokeRect(-skateboard.width / 2, -skateboard.height / 2, skateboard.width, skateboard.height);
+
 
     // Wheels
     ctx.fillStyle = '#333';

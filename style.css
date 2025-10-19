@@ -140,6 +140,10 @@ button {
   transition: transform 0.3s, box-shadow 0.3s;
 }
 
+
+
+
+
 .button-container {
     display: flex;
     justify-content: space-around; /* Distributes buttons evenly with space between them */
@@ -154,12 +158,12 @@ button {
     font-family: Knewave, system-ui; /* Matches the heading font, adjust as needed */
     font-weight: bold;
     text-align: center;
-    width: 200px; /* Defines a fixed width for the buttons */
+    width: 120px; /* Defines a fixed width for the buttons */
 }
 
 .image-container {
     position: relative; /* Crucial for positioning the text over the image */
-    height: 150px; /* Sets a fixed height for the image containers */
+    height: 80px; /* Sets a fixed height for the image containers */
     overflow: hidden; /* Ensures any part of the image that might overflow is hidden */
     border-radius: 10px; /* Optional: adds rounded corners to the buttons */
 }
@@ -181,6 +185,12 @@ button {
     border-radius: 5px;
     transition: background-color 0.3s ease;
 }
+
+
+
+
+
+
 
 
 button:hover {

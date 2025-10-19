@@ -3,6 +3,7 @@
   src: url('fonts/ReignBeats.otf') format('opentype');
 }
 
+
 /* ========== Base ========== */
 body {
   margin: 0;
@@ -383,17 +384,20 @@ body.fade-out { opacity: 1; animation: fadeOutBody 0.5s forwards; }
   line-height: 1.6;
 }
 
+
 h1 {
   color: royalblue;
-  font-size: 24px;
+  font-size: 28px;
 }
 
 p {
-  font-size: 18px;
+  font-size: 24px;
 }
 
 li {
-  font-size: 18px;
+  font-size: 24px;
 }
+
+
 
 

@@ -37,9 +37,14 @@ body {
   box-shadow: 0 0 20px #b388ff;
 }
 
-
-
-
+.right-corner {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 300px;
+  height: auto;
+  border-radius: 15px;
+}
 
 
 

@@ -340,5 +340,180 @@
   updateSkateboardPosition();
 </script>
 
+
+
+<script>
+(() => {
+  const canvas = document.getElementById('gameCanvas');
+  if (!canvas) return; // safety
+
+  const ctx = canvas.getContext('2d');
+  const speedDisplay = document.getElementById('speed');
+
+  // Game state
+  const skateboard = {
+    x: 150,
+    y: 0,
+    vx: 0,
+    vy: 0,
+    width: 50,
+    height: 20,
+    rotation: 0,
+    friction: 0.97,
+    gravity: 0.5
+  };
+
+  let isDragging = false;
+  let dragStart = { x: 0, y: 0 };
+  let lastPos = { x: 0, y: 0 };
+
+  // Build ramp points
+  const rampPoints = [];
+  function buildRamp() {
+    rampPoints.length = 0;
+    for (let x = 0; x <= canvas.width; x += 5) {
+      let y;
+      if (x < 100) {
+        y = canvas.height - 80;
+      } else if (x < 250) {
+        y = canvas.height - 80 - (x - 100) * 0.6;
+      } else if (x < 650) {
+        y = canvas.height - 170 - Math.sin((x - 250) / 400 * Math.PI) * 120;
+      } else if (x < 800) {
+        y = canvas.height - 80 - (800 - x) * 0.6;
+      } else {
+        y = canvas.height - 80;
+      }
+      rampPoints.push({ x, y });
+    }
+  }
+
+  function getRampY(x) {
+    x = Math.max(0, Math.min(x, canvas.width));
+    let closestDist = Infinity;
+    let closestY = canvas.height;
+    for (let p of rampPoints) {
+      const d = Math.abs(p.x - x);
+      if (d < closestDist) { closestDist = d; closestY = p.y; }
+    }
+    return closestY;
+  }
+
+  function getRampAngle(x) {
+    x = Math.max(0, Math.min(x, canvas.width));
+    let idx = Math.floor(x / 5);
+    idx = Math.max(0, Math.min(idx, rampPoints.length - 2));
+    const p1 = rampPoints[idx];
+    const p2 = rampPoints[idx + 1];
+    return Math.atan2(p2.y - p1.y, p2.x - p1.x);
+  }
+
+  function drawRamp() {
+    ctx.fillStyle = '#8B4513';
+    ctx.beginPath();
+    ctx.moveTo(0, canvas.height);
+    for (let p of rampPoints) ctx.lineTo(p.x, p.y);
+    ctx.lineTo(canvas.width, canvas.height);
+    ctx.closePath();
+    ctx.fill();
+
+    ctx.strokeStyle = '#654321';
+    ctx.lineWidth = 3;
+    ctx.beginPath();
+    ctx.moveTo(0, canvas.height);
+    for (let p of rampPoints) ctx.lineTo(p.x, p.y);
+    ctx.stroke();
+  }
+
+  function drawSkateboard() {
+    const rampY = getRampY(skateboard.x);
+    skateboard.y = rampY - 15;
+    skateboard.rotation = getRampAngle(skateboard.x);
+
+    ctx.save();
+    ctx.translate(skateboard.x, skateboard.y);
+    ctx.rotate(skateboard.rotation);
+
+    // Board
+    ctx.fillStyle = '#FF6B35';
+    ctx.fillRect(-skateboard.width / 2, -skateboard.height / 2, skateboard.width, skateboard.height);
+    ctx.strokeStyle = '#333';
+    ctx.lineWidth = 2;
+    ctx.strokeRect(-skateboard.width / 2, -skateboard.height / 2, skateboard.width, skateboard.height);
+
+    // Wheels
+    ctx.fillStyle = '#333';
+    ctx.beginPath();
+    ctx.arc(-15, skateboard.height / 2 + 3, 6, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.beginPath();
+    ctx.arc(15, skateboard.height / 2 + 3, 6, 0, Math.PI * 2);
+    ctx.fill();
+
+    ctx.restore();
+  }
+
+  // Events
+  canvas.addEventListener('mousedown', (e) => {
+    const rect = canvas.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    const dist = Math.hypot(x - skateboard.x, y - skateboard.y);
+    if (dist < 40) {
+      isDragging = true;
+      dragStart = { x, y };
+      lastPos = { x: skateboard.x, y: skateboard.y };
+    }
+  });
+
+  document.addEventListener('mousemove', (e) => {
+    if (!isDragging) return;
+    const rect = canvas.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+
+    const dx = x - dragStart.x;
+    skateboard.x += dx * 0.8;
+    skateboard.x = Math.max(0, Math.min(skateboard.x, canvas.width));
+    skateboard.vx = (skateboard.x - lastPos.x) * 0.5;
+
+    lastPos = { x: skateboard.x, y: skateboard.y };
+    dragStart = { x, y };
+  });
+
+  document.addEventListener('mouseup', () => { isDragging = false; });
+
+  // Loop
+  function update() {
+    if (!isDragging) {
+      skateboard.vx *= skateboard.friction;
+      skateboard.x += skateboard.vx;
+      skateboard.x = Math.max(0, Math.min(skateboard.x, canvas.width));
+    }
+    speedDisplay.textContent = Math.abs(skateboard.vx).toFixed(1);
+  }
+
+  function draw() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    drawRamp();
+    drawSkateboard();
+  }
+
+  function gameLoop() {
+    update();
+    draw();
+    requestAnimationFrame(gameLoop);
+  }
+
+  // Build ramp once and go
+  buildRamp();
+  gameLoop();
+
+  // Optional: rebuild ramp if you ever change canvas size dynamically
+  // window.addEventListener('resize', () => { buildRamp(); });
+})();
+</script>
+
+  
 </body>
 </html>

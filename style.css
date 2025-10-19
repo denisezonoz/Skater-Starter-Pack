@@ -28,8 +28,8 @@ body {
 /* skateboard directly under title */
 .skateboard-pic {
   position: absolute;
-  top: 220px;      /* about 120px below title (adjust to fit visually) */
-  left: 200px;     /* center under title */
+  top: 400px;      /* about 120px below title (adjust to fit visually) */
+  left: 300px;     /* center under title */
   width: 200px;    /* make skateboard visible but smaller than title */
   height: auto;
   z-index: 10;

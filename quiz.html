@@ -3,211 +3,78 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Find Your Perfect Skateboard</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Skateboard Selector Quiz</title>
+    <style>
+        body { font-family: Arial, sans-serif; line-height: 1.6; margin: 0; padding: 20px; background-color: #f4f4f4; }
+        .quiz-container { max-width: 700px; margin: auto; background: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+        .question { margin-bottom: 20px; }
+        .question h3 { color: #333; }
+        .question label { display: block; margin-bottom: 10px; cursor: pointer; }
+        .question input[type="radio"] { margin-right: 10px; }
+        .result-container { display: none; margin-top: 20px; padding: 20px; border-top: 2px solid #ddd; }
+        button { padding: 10px 15px; background-color: #007bff; color: white; border: none; border-radius: 5px; cursor: pointer; }
+        button:hover { background-color: #0056b3; }
+    </style>
 </head>
 <body>
+
     <div class="quiz-container">
-        <h1>Find Your Perfect Skateboard</h1>
-        <div id="quiz-content">
+        <h1>Which Skateboard is Right for You?</h1>
+        <form id="skateboard-quiz">
             <div class="question">
-                <h3>1. What is your primary goal for skateboarding?</h3>
-                <ul class="options">
-                    <li>
-                        <label>
-                            <input type="radio" name="q1" value="shortboard">
-                            To learn tricks like ollies, kickflips, and grinds.
-                        </label>
-                    </li>
-                    <li>
-                        <label>
-                            <input type="radio" name="q1" value="freestyle">
-                            To skate and do stylized flatground tricks.
-                        </label>
-                    </li>
-                    </li>
-                    <li>
-                        <label>
-                            <input type="radio" name="q1" value="longboard">
-                            To cruise and cover long distances with stability.
-                        </label>
-                    </li>
-                    <li>
-                        <label>
-                            <input type="radio" name="q1" value="surfskate">
-                            To practice and simulate surfing movements on the street.
-                        </label>
-                    </li>
-                    <li>
-                        <label>
-                            <input type="radio" name="q1" value="minicruiser">
-                            To have a small, portable board for short, casual rides.
-                        </label>
-                    </li>
-                </ul>
+                <h3>1. What is your primary goal for riding a skateboard?</h3>
+                <label><input type="radio" name="q1" value="Shortboard"> To do flip tricks, grinds, and use it at a skatepark.</label>
+                <label><input type="radio" name="q1" value="Freestyle"> To do creative footwork and old-school flatland tricks.</label>
+                <label><input type="radio" name="q1" value="Longboard"> For comfortable cruising, commuting, or speed on long distances.</label>
+                <label><input type="radio" name="q1" value="Surfskate"> To practice surfing maneuvers on land and carve tight turns.</label>
+                <label><input type="radio" name="q1" value="Minicruiser"> To have a small, portable board for short commutes and quick rides.</label>
             </div>
 
             <div class="question">
-                <h3>2. How would you describe your ideal skating location?</h3>
-                <ul class="options">
-                    <li>
-                        <label>
-                            <input type="radio" name="q2" value="shortboard">
-                            Skateparks with ramps, rails, and stairs, or street spots.
-                        </label>
-                    </li>
-                    <li>
-                        <label>
-                            <input type="radio" name="q2" value="freestyle">
-                            Smooth, flat, and open areas like parking lots or driveways.
-                        </label>
-                    </li>
-                    <li>
-                        <label>
-                            <input type="radio" name="q2" value="longboard">
-                            Long, open roads and bike paths with smooth pavement.
-                        </label>
-                    </li>
-                    <li>
-                        <label>
-                            <input type="radio" name="q2" value="surfskate">
-                            Concrete surfaces where you can pump and carve, like banks or bowls.
-                        </label>
-                    </li>
-                    <li>
-                        <label>
-                            <input type="radio" name="q2" value="minicruiser">
-                            The sidewalk on a short trip to a friend's house or a store.
-                        </label>
-                    </li>
-                </ul>
+                <h3>2. What kind of terrain do you expect to ride on most often?</h3>
+                <label><input type="radio" name="q2" value="Shortboard"> Smooth, paved surfaces like skateparks and streets.</label>
+                <label><input type="radio" name="q2" value="Freestyle"> Flat, smooth ground for footwork.</label>
+                <label><input type="radio" name="q2" value="Longboard"> Roads, paths, and sidewalks, including some rougher surfaces.</label>
+                <label><input type="radio" name="q2" value="Surfskate"> Smooth pavement, bowls, and pump tracks.</label>
+                <label><input type="radio" name="q2" value="Minicruiser"> City streets and campus paths for short rides.</label>
             </div>
 
             <div class="question">
-                <h3>3. What's most important to you in a skateboard's performance?</h3>
-                <ul class="options">
-                    <li>
-                        <label>
-                            <input type="radio" name="q3" value="shortboard">
-                            Responsiveness and maneuverability for sharp turns and tricks.
-                        </label>
-                    </li>
-                    <li>
-                        <label>
-                            <input type="radio" name="q3" value="freestyle">
-                            Perfect balance and stability for intricate, technical footwork.
-                        </label>
-                    </li>
-                    <li>
-                        <label>
-                            <input type="radio" name="q3" value="longboard">
-                            Stability and speed for a smooth, fast ride.
-                        </label>
-                    </li>
-                    <li>
-                        <label>
-                            <input type="radio" name="q3" value="surfskate">
-                            Pumping, carving, and replicating the feel of a wave.
-                        </label>
-                    </li>
-                    <li>
-                        <label>
-                            <input type="radio" name="q3" value="minicruiser">
-                            Portability and convenience for quick transportation.
-                        </label>
-                    </li>
-                </ul>
+                <h3>3. What size and feel do you prefer in a board?</h3>
+                <label><input type="radio" name="q3" value="Shortboard"> A standard-sized, symmetrical board for maximum trick capability.</label>
+                <label><input type="radio" name="q3" value="Freestyle"> A medium-sized, symmetrical deck that is lighter and easier to spin.</label>
+                <label><input type="radio" name="q3" value="Longboard"> A large, stable board that offers a smooth, cushioned ride.</label>
+                <label><input type="radio" name="q3" value="Surfskate"> A nimble board with a specialized, loose front truck for tight turns.</label>
+                <label><input type="radio" name="q3" value="Minicruiser"> The smallest, most portable option for easy carrying.</label>
             </div>
 
             <div class="question">
-                <h3>4. What kind of board size and weight do you prefer?</h3>
-                <ul class="options">
-                    <li>
-                        <label>
-                            <input type="radio" name="q4" value="shortboard">
-                            Light and smaller for easy flip tricks and carrying.
-                        </label>
-                    </li>
-                    <li>
-                        <label>
-                            <input type="radio" name="q4" value="freestyle">
-                            Symmetrical, medium size, with balanced weight for flatground maneuvers.
-                        </label>
-                    </li>
-                    <li>
-                        <label>
-                            <input type="radio" name="q4" value="longboard">
-                            Large and stable for cruising and speed.
-                        </label>
-                    </li>
-                    <li>
-                        <label>
-                            <input type="radio" name="q4" value="surfskate">
-                            Medium size, with a focus on a responsive turning system.
-                        </label>
-                    </li>
-                    <li>
-                        <label>
-                            <input type="radio" name="q4" value="minicruiser">
-                            Very small and light for maximum portability.
-                        </label>
-                    </li>
-                </ul>
+                <h3>4. What type of riding style appeals to you most?</h3>
+                <label><input type="radio" name="q4" value="Shortboard"> Aggressive, high-impact skating with jumps and grinds.</label>
+                <label><input type="radio" name="q4" value="Freestyle"> Creative, technical, and precise footwork without leaving the ground.</label>
+                <label><input type="radio" name="q4" value="Longboard"> Relaxed, effortless cruising with smooth, deep carving.</label>
+                <label><input type="radio" name="q4" value="Surfskate"> Fluid, surf-like maneuvers and continuous pumping for speed.</label>
+                <label><input type="radio" name="q4" value="Minicruiser"> Quick and casual transportation with minimal pushing.</label>
             </div>
 
             <div class="question">
-                <h3>5. What is your experience level?</h3>
-                <ul class="options">
-                    <li>
-                        <label>
-                            <input type="radio" name="q5" value="shortboard">
-                            Intermediate to advanced, focused on technical skills.
-                        </label>
-                    </li>
-                    <li>
-                        <label>
-                            <input type="radio" name="q5" value="freestyle">
-                            Intermediate to advanced, with a focus on flatground tricks.
-                        </label>
-                    </li>
-                    <li>
-                        <label>
-                            <input type="radio" name="q5" value="longboard">
-                            Beginner to advanced, looking for a stable and comfortable ride.
-                        </label>
-                    </li>
-                    <li>
-                        <label>
-                            <input type="radio" name="q5" value="surfskate">
-                            Beginner to intermediate, interested in carving and unique turn mechanics.
-                        </label>
-                    </li>
-                    <li>
-                        <label>
-                            <input type="radio" name="q5" value="minicruiser">
-                            Beginner, looking for a simple, easy-to-manage board.
-                        </label>
-                    </li>
-                </ul>
+                <h3>5. How important is portability for you?</h3>
+                <label><input type="radio" name="q5" value="Shortboard"> Not very important. Performance is the priority.</label>
+                <label><input type="radio" name="q5" value="Freestyle"> It's somewhat important, as I prefer a lighter deck.</label>
+                <label><input type="radio" name="q5" value="Longboard"> Not important. I want the most stability and comfort.</label>
+                <label><input type="radio" name="q5" value="Surfskate"> Important enough to get a board that is still relatively compact.</label>
+                <label><input type="radio" name="q5" value="Minicruiser"> Very important. I need to be able to carry it easily.</label>
             </div>
 
-            <button class="submit-btn" onclick="calculateResult()">Get My Skateboard Match!</button>
-        </div>
+            <button type="submit">See My Skateboard</button>
+        </form>
 
-        <div id="quiz-results" class="results hidden">
-            <!-- Results will be displayed here by JavaScript -->
+        <div id="result" class="result-container">
+            <h2>Your Best Match: <span id="board-type"></span></h2>
+            <p id="board-description"></p>
         </div>
     </div>
-    
-    <script src="script.js"></script>
 
-<button id="submit-quiz">Get Your Result</button>
-<div id="results-container" class="hidden">
-    <h2 id="result-title"></h2>
-    <p id="result-description"></p>
-    <button id="restart-quiz">Retake Quiz</button>
-</div>
-    
+    <script src="quiz.js"></script>
 </body>
 </html>
-

@@ -61,7 +61,7 @@ body {
   position: absolute;
   top: -170px;
   left: 10px;
-  width: 1500px;
+  width: 1200px;
   height: auto;
   z-index: 10;
   filter: drop-shadow(0 4px 12px rgba(0,0,0,0.5));
@@ -82,7 +82,7 @@ body {
 /* skateboard directly under title */
 .skateboard-pic {
   position: absolute;
-  top: 300px;      /* about 120px below title (adjust to fit visually) */
+  top: 400px;      /* about 120px below title (adjust to fit visually) */
   left: 200px;     /* center under title */
   width: 550px;    /* make skateboard visible but smaller than title */
   height: auto;

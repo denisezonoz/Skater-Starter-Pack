@@ -76,7 +76,7 @@ body {
 
 .ramp-pic {
   position: absolute;
-  top: 600px;      /* about 120px below title (adjust to fit visually) */
+  top: 200px;      /* about 120px below title (adjust to fit visually) */
   right: 150px;     /* center under title */
   width: 900px;    /* make skateboard visible but smaller than title */
   height: auto;

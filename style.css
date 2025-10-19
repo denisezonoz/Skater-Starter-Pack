@@ -3,6 +3,30 @@
   src: url('fonts/ReignBeats.otf') format('opentype');
 }
 
+.quiz-button-container {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.quiz-button {
+  background-color: #7B1FA2; /* neon purple */
+  color: white;
+  font-family: 'Knewave', cursive;
+  font-size: 1.3em;
+  padding: 14px 28px;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+  transition: all 0.2s ease;
+}
+
+.quiz-button:hover {
+  background-color: #9C27B0;
+  transform: scale(1.08);
+}
+
+
 
 /* ========== Base ========== */
 body {

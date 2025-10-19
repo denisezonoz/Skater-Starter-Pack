@@ -375,13 +375,6 @@ body.fade-out { opacity: 1; animation: fadeOutBody 0.5s forwards; }
 }
 
 
-.quiz-game h2 {
-  font-family: 'ReignBeats', sans-serif;
-  color: #e6d6ff;
-  text-shadow: 0 0 10px #8a2be2;
-  margin: 0 0 10px;
-}
-
 .game-container {
   text-align: center;
 }

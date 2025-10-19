@@ -15,6 +15,35 @@ body {
   
 }
 
+.back-button-container {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.back-button-container button {
+  background: linear-gradient(135deg, #6200ea, #003399);
+  color: white;
+  border: none;
+  padding: 20px 40px;
+  border-radius: 40px;
+  font-size: 1.2rem;
+  margin-top: 2rem;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.back-button-container button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px #b388ff;
+}
+
+
+
+
+
+
+
+
 /* title picture */
 .title-pic {
   position: absolute;

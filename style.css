@@ -59,7 +59,7 @@ body {
 /* title picture */
 .title-pic {
   position: absolute;
-  top: 10px;
+  top: -50px;
   left: 60px;
   width: 1200px;
   height: auto;

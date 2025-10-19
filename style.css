@@ -377,26 +377,27 @@ body.fade-out { opacity: 1; animation: fadeOutBody 0.5s forwards; }
 
 h2 {
   font-family: 'Splash', sans-serif;
-  font-size: 3rem;
+  font-size: 80px;
   margin-bottom: 1rem;
   color: #010082;
 }
 
 h1 {
-  
+  font-family: "Tangerine", cursive;
   color: royalblue;
-  font-size: 28px;
+  font-size: 50px;
 }
 
 p {
-  font-size: 24px;
+  font-size: 30px;
   line-height: 1.7;
   max-width: 900px;
   margin: 1rem auto;
 }
 
 li {
-  font-size: 24px;
+  
+  font-size: 30px;
 }
 
 

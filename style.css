@@ -52,8 +52,8 @@ body {
 
 .can-pic {
   position: absolute;
-  top: 400px;
-  left: 1000px;
+  top: 300px;
+  left: 600px;
   width: 300px;
   height: auto;
   z-index: 10;

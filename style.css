@@ -140,6 +140,49 @@ button {
   transition: transform 0.3s, box-shadow 0.3s;
 }
 
+.button-container {
+    display: flex;
+    justify-content: space-around; /* Distributes buttons evenly with space between them */
+    align-items: center;
+    flex-wrap: wrap; /* Allows buttons to wrap to the next line on smaller screens */
+    gap: 20px; /* Provides consistent spacing between buttons */
+}
+
+.image-button {
+    text-decoration: none; /* Removes the underline from the link text */
+    color: white;
+    font-family: Knewave, system-ui; /* Matches the heading font, adjust as needed */
+    font-weight: bold;
+    text-align: center;
+    width: 200px; /* Defines a fixed width for the buttons */
+}
+
+.image-container {
+    position: relative; /* Crucial for positioning the text over the image */
+    height: 150px; /* Sets a fixed height for the image containers */
+    overflow: hidden; /* Ensures any part of the image that might overflow is hidden */
+    border-radius: 10px; /* Optional: adds rounded corners to the buttons */
+}
+
+.image-container img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover; /* Ensures the image fills the container without being distorted */
+}
+
+.button-text {
+    position: absolute; /* Positions the text over the image */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centering magic for both horizontal and vertical alignment */
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent overlay for better text readability */
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+
 button:hover {
   transform: scale(1.05);
   box-shadow: 0 0 20px #b388ff;

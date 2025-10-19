@@ -29,8 +29,8 @@ body {
 .skateboard-pic {
   position: absolute;
   top: 600px;      /* about 120px below title (adjust to fit visually) */
-  left: 230px;     /* center under title */
-  width: 400px;    /* make skateboard visible but smaller than title */
+  left: 220px;     /* center under title */
+  width: 450px;    /* make skateboard visible but smaller than title */
   height: auto;
   z-index: 10;
   filter: drop-shadow(0 4px 12px rgba(0,0,0,0.5));

@@ -12,13 +12,25 @@ body {
   overflow-x: hidden;
   
 }
-
+/*
 .gradient {
   position: absolute;
   width: 100svw;
   height: 100svh;
   background: linear-gradient(180deg, #28017D 0%, #6320A3 40.38%, #CE50BE 79.81%, #E47EBF 89.42%, #FFDADB 100%);
   z-index: 0;
+}
+*/
+.gradient {
+  position: relative;        /* was absolute */
+  width: 100svw;
+  height: 100svh;            /* full viewport */
+  background: linear-gradient(180deg, #28017D 0%, #6320A3 40.38%, #CE50BE 79.81%, #E47EBF 89.42%, #FFDADB 100%);
+  z-index: 0;
+  display: flex;             /* center #home content */
+  align-items: center;
+  justify-content: center;
+  padding-top: 80px;         /* avoid sticky nav overlap (tweak if needed) */
 }
 
 /* Smooth scroll */
@@ -281,7 +293,7 @@ body.fade-out { opacity: 1; animation: fadeOutBody 0.5s forwards; }
 .skate-game {
   position: relative;
   z-index: 1;
-  margin-top: 1000px;  /* adjust this for more or less space */
+  margin-top: 40px;  /* adjust this for more or less space */
   background: rgba(255,255,255,0.05);
   padding: 3rem 2rem;
   border-radius: 20px;

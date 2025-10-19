@@ -33,6 +33,17 @@ body {
   padding-top: 80px;         /* avoid sticky nav overlap (tweak if needed) */
 }
 
+.gradient::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 150px; /* controls blend distance */
+  background: linear-gradient(to bottom, transparent, white);
+}
+
+
 /* Smooth scroll */
 html { scroll-behavior: smooth; }
 

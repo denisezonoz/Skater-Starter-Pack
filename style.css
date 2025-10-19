@@ -125,19 +125,7 @@ main, section {
 main, section { scroll-margin-top: 120px; }
 
 /* Headings/paragraphs */
-h2 {
-  font-family: 'Splash', sans-serif;
-  font-size: 3rem;
-  margin-bottom: 1rem;
-  color: #c9b6ff;
-}
 
-p {
-  font-size: 1.1rem;
-  line-height: 1.7;
-  max-width: 900px;
-  margin: 1rem auto;
-}
 
 /* ========== Buttons ========== */
 button {
@@ -385,13 +373,26 @@ body.fade-out { opacity: 1; animation: fadeOutBody 0.5s forwards; }
 }
 
 
+
+
+h2 {
+  font-family: 'Splash', sans-serif;
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: #010082;
+}
+
 h1 {
+  
   color: royalblue;
   font-size: 28px;
 }
 
 p {
   font-size: 24px;
+  line-height: 1.7;
+  max-width: 900px;
+  margin: 1rem auto;
 }
 
 li {

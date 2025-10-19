@@ -385,6 +385,7 @@ body.fade-out { opacity: 1; animation: fadeOutBody 0.5s forwards; }
 
 h1 {
   color: royalblue;
+  font-size: 24px;
 }
 
 p {

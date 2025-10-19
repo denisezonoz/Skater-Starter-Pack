@@ -389,6 +389,7 @@ h1 {
 }
 
 p {
+  font-family: "Zen Antique Soft", serif;
   font-size: 30px;
   line-height: 1.7;
   max-width: 900px;
@@ -396,7 +397,7 @@ p {
 }
 
 li {
-  
+  font-family: "Zen Antique Soft", serif;
   font-size: 30px;
 }
 

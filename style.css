@@ -281,7 +281,7 @@ body.fade-out { opacity: 1; animation: fadeOutBody 0.5s forwards; }
 .skate-game {
   position: relative;
   z-index: 1;
-  margin-top: 200px;  /* adjust this for more or less space */
+  margin-top: 1000px;  /* adjust this for more or less space */
   background: rgba(255,255,255,0.05);
   padding: 3rem 2rem;
   border-radius: 20px;

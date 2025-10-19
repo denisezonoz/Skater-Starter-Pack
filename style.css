@@ -70,9 +70,9 @@ body {
 
 .pack-pic {
   position: absolute;
-  top: 40px;
+  top: 100px;
   left: 60px;
-  width: 200px;
+  width: 600px;
   height: auto;
   z-index: 10;
   filter: drop-shadow(0 4px 12px rgba(0,0,0,0.5));
@@ -94,7 +94,7 @@ body {
 
 .ramp-pic {
   position: absolute;
-  top: 10000px;      /* about 120px below title (adjust to fit visually) */
+  top: 100px;      /* about 120px below title (adjust to fit visually) */
   right: 100px;     /* center under title */
   width: 900px;    /* make skateboard visible but smaller than title */
   height: auto;

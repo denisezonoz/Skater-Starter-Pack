@@ -18,6 +18,11 @@ How to take Skate board quiz:
     In the "Equipment" section there will be a button called "Find your perfect skateboard". When you click this button you will be redirectedto another page. Take the quiz by answering all questions and clicking the "See My Skateboard" button. Scroll down to see your results from the quiz. To retake quiz just change your andswers and hit the "See My Skateboard" button again. When done with quiz, click the "Back to Homepage" button to return to the website.
 
 
+
+Tech Contributions:
+  We used several AI's to help create images and code as well as support for editing code.
+
+
 Future Plans:
   We want to add more graphics or "stickers" to give our website more personality and make it more visually appealing. We also want to add a comment/review section for feedback on our website, a chat room so skaters can post or talk to eachother. 
 

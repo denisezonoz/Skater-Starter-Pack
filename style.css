@@ -18,7 +18,7 @@ body {
   position: absolute;
   top: 100px;       /* distance from top — adjust as needed */
   left: 60px;       /* distance from left side */
-  width: 400px;     /* adjust size of your graffiti title */
+  width: 600px;     /* adjust size of your graffiti title */
   height: auto;
   z-index: 10;      /* ensures it appears above the gradient */
   filter: drop-shadow(0 4px 12px rgba(0,0,0,0.5)); /* adds subtle shadow */

@@ -47,8 +47,6 @@ window.addEventListener('scroll', () => {
 
 //quiz
 
-
-
 document.getElementById('skateboard-quiz').addEventListener('submit', function(event) {
     event.preventDefault();
 
@@ -114,6 +112,3 @@ function displayResult(board) {
     boardDescEl.innerHTML = resultData.description;
     resultEl.style.display = 'block';
 }
-
-    });
-});
